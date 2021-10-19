@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main {
+        width: 300px;
+        height: 100px;
+        text-align: center;
+        margin-left: 40%;
+        margin-top: 15%;
+    }
+
+    .time {
+
+        margin-top: 10%;
+
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 25px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .tm {
+        margin-top: 25px;
+    }
+
+
+    #msg {
+        font-size: 20px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: lightseagreen;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <Span id="msg"> </Span>
+        <div class="tm">
+            <span id="hr" class="time"></span> <span id="min" class="time"></span><span id="sec"
+                class="time"></span><span id="ap" class="time"></span>
+        </div>
+       
+    </div>
+
+    <script>
+        var hr, min, sec, ap;
+
+        function Load() {
+            hr = document.getElementById('hr');
+            min = document.getElementById('min');
+            sec = document.getElementById('sec');
+            ap = document.getElementById('ap');
+
+            var dt = new Date();
+
+            var gHr = dt.getHours();
+            var gMin = dt.getMinutes();
+            var gSec = dt.getSeconds();
+
+            hr.innerHTML = gHr + ':';
+            min.innerHTML = gMin + ':';
+            sec.innerHTML = gSec;
+
+            var msg;
+
+            if (hr > 8) {
+                console.log(hr);
+                msg = document.getElementById('msg');
+                // msg.innerHTML = 'Happy Birthday Sk';
+                // console.log(msg)
+            }
+        }
+        setInterval(Load, 1000);
+    </script>
+</body>
+
+</html>
